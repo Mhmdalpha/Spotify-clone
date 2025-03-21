@@ -55,4 +55,4 @@ const AuthModal = () => {
   )
 }
 
-export default AuthModal
+export default AuthModal;
