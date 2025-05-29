@@ -38,8 +38,8 @@ export async function POST(request: Request) {
         trial_from_plan: true,
         metadata,
       },
-      success_url: `${getURL()}/account`,
-      cancel_url: `${getURL()}/`,
+      success_url: new URL("/account", getURL()).toString(),
+      cancel_url: new URL("/", getURL()).toString(),
     })
 
     return NextResponse.json({ sessionId: session.id })
