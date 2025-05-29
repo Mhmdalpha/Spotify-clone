@@ -7,7 +7,7 @@ export const getURL = () => {
       : process.env.NEXT_PRODUCTION_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_PUBLIC_VERCEL_URL
 
   url = url?.includes("http") ? url : `https://${url}`
-  url = url.charAt(url.length - 1) === "/" ? url : `${url}/`
+  url = url.replace(/\/+$/, "") + "/";
 
   return url
 }
